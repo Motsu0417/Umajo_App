@@ -34,9 +34,13 @@ class MainActivity : AppCompatActivity() {
             }.commit()
             setButtonActive(false)
         }
+
+        for(i in 0..10){
+            orderItemList.add(OrderItem("item$i","本"))
+        }
     }
     
-    fun setButtonActive(boolean: Boolean){
+    private fun setButtonActive(boolean: Boolean){
         binding.orderButton.isVisible = boolean
         binding.timeButton.isVisible = boolean
         binding.workButton.isVisible = boolean
@@ -52,4 +56,24 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+
+    companion object{
+        public val orderItemList = ArrayList<OrderItem>()
+    }
+}
+
+public class OrderItem{
+    var name = ""
+    var lot = ""
+    var value = 0
+
+    constructor(name: String , lot:String) {
+        this.name = name
+        this.lot = lot
+    }
+
+    override fun toString(): String {
+        return "$name $value $lot"
+    }
+
 }
