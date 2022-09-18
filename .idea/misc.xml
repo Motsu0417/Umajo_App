@@ -4,11 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/user/Desktop/LA/Projects/Umajo_App/app/src/main/res/layout/activity_main.xml" value="0.20878623188405798" />
-        <entry key="..\:/Users/user/Desktop/LA/Projects/Umajo_App/app/src/main/res/layout/fragment_order.xml" value="0.6" />
+        <entry key="..\:/Users/user/Desktop/LA/Projects/Umajo_App/app/src/main/res/layout/fragment_order.xml" value="0.4524929444967074" />
         <entry key="..\:/Users/user/Desktop/LA/Projects/Umajo_App/app/src/main/res/layout/fragment_time_manage.xml" value="0.20878623188405798" />
         <entry key="..\:/Users/user/Desktop/LA/Projects/Umajo_App/app/src/main/res/layout/fragment_work_manage.xml" value="0.20878623188405798" />
-        <entry key="..\:/Users/user/Desktop/LA/Projects/Umajo_App/app/src/main/res/layout/order_view_item.xml" value="0.8" />
-        <entry key="..\:/Users/user/Desktop/LA/Projects/Umajo_App/app/src/main/res/layout/work_view_item.xml" value="0.20878623188405798" />
+        <entry key="..\:/Users/user/Desktop/LA/Projects/Umajo_App/app/src/main/res/layout/order_view_item.xml" value="0.536" />
+        <entry key="..\:/Users/user/Desktop/LA/Projects/Umajo_App/app/src/main/res/layout/work_view_item.xml" value="0.264" />
       </map>
     </option>
   </component>

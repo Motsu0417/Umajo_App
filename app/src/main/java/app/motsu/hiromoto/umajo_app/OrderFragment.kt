@@ -18,10 +18,6 @@ class OrderFragment : Fragment() {
     private val binding get() = _binding!!
     private val items = MainActivity.orderItemList
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,9 +58,5 @@ class OrderFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    companion object {
-
     }
 }
