@@ -1,10 +1,15 @@
 package app.motsu.hiromoto.umajo_app
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.core.view.isVisible
 import app.motsu.hiromoto.umajo_app.databinding.ActivityMainBinding
+import java.sql.Time
+import java.time.LocalDateTime
+import java.time.LocalTime
 
 class MainActivity : AppCompatActivity() {
 
@@ -151,5 +156,18 @@ public class WorkItem{
 
     constructor(title:String) {
         this.title = title
+    }
+}
+
+public class TimeItem{
+    private var _startTime: LocalDateTime? = null
+    private var _allottedTime: LocalTime? = null
+    val startTime get() = _startTime!!
+    val allottedTime get() = _allottedTime!!
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    constructor(startTime: LocalDateTime) {
+        this._startTime = startTime
+        _allottedTime = LocalTime.of(1,0)
     }
 }
