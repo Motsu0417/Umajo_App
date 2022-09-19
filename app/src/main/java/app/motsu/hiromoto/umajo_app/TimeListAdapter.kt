@@ -5,10 +5,7 @@ import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.TextView
-import android.widget.TimePicker
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -44,6 +41,7 @@ class TimeListAdapter(private val timeItems:ArrayList<TimeItem>,
         var hour = 0
         var minute = 0
         holder.moreTimeButton.setOnClickListener {
+            Toast.makeText(it.context,"実装中...CommingSoon...",Toast.LENGTH_SHORT).show()
             TimePickerDialog(rootActivity, { timePicker, h, m ->
 //                timePicker.hour = 0
 //                timePicker.minute = 0
