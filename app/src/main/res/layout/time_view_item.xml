@@ -4,12 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="10dp"
     android:backgroundTintMode="add">
 
     <TextView
         android:id="@+id/label_1"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/kosugi_maru"
         android:text="席"
         app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,8 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:fontFamily="@font/kosugi_maru"
+        android:hint="A1-7,B1-7,C1-3"
         android:inputType="textPersonName"
-        android:text="Name"
         android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@+id/label_1"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,6 +34,7 @@
         android:id="@+id/time_item_start_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/kosugi_maru"
         android:text="00:00"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -41,6 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:fontFamily="@font/kosugi_maru"
         android:text="-"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -52,6 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:fontFamily="@font/kosugi_maru"
         android:text="00:00"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -62,6 +69,7 @@
         android:id="@+id/label_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/kosugi_maru"
         android:text="経過"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/time_item_start_textView" />
@@ -73,12 +81,14 @@
         android:layout_marginStart="8dp"
         android:text="0:00:00"
         app:layout_constraintStart_toEndOf="@+id/label_3"
-        app:layout_constraintTop_toBottomOf="@+id/time_item_start_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/time_item_start_textView"
+        android:fontFamily="@font/kosugi_maru" />
 
     <TextView
         android:id="@+id/label_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/kosugi_maru"
         android:text="残り"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label_3" />
@@ -88,7 +98,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="0:00:0:0"
+        android:fontFamily="@font/kosugi_maru"
+        android:text="0:00:00"
         app:layout_constraintStart_toEndOf="@+id/label_4"
         app:layout_constraintTop_toBottomOf="@+id/time_item_elapsed_textView" />
 
@@ -98,6 +109,7 @@
         android:layout_height="55dp"
         android:layout_marginEnd="20dp"
         app:icon="@drawable/ic_baseline_more_time_24"
+        app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -26,6 +26,10 @@ class WorkListAdapter(private val workItems:ArrayList<WorkItem>,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.workCheckBox.text = workItems[position].title
         holder.workCheckBox.isChecked = workItems[position].status
+        holder.workCheckBox.setOnClickListener{
+            workItems[position].status = !workItems[position].status
+        }
+
     }
 
     override fun getItemCount() = workItems.size

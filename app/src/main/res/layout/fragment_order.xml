@@ -23,15 +23,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:fontFamily="@font/kosugi_maru"
         android:text="発注"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/order_share_button"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="60dp"
         android:layout_height="0dp"
         app:icon="@drawable/ic_baseline_share_24"
@@ -43,6 +45,8 @@
         android:id="@+id/order_recycle_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

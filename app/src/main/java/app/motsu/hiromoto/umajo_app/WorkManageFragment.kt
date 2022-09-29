@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import app.motsu.hiromoto.umajo_app.databinding.FragmentOrderBinding
 import app.motsu.hiromoto.umajo_app.databinding.FragmentWorkManageBinding
 
 class WorkManageFragment : Fragment() {
@@ -27,6 +27,7 @@ class WorkManageFragment : Fragment() {
             adapter =WorkListAdapter(workItems, requireActivity() as AppCompatActivity)
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
+            addItemDecoration(DividerItemDecoration(this.context, DividerItemDecoration.VERTICAL))
         }
 
         return binding.root

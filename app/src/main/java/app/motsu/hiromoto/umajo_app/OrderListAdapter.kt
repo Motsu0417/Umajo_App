@@ -28,7 +28,7 @@ class OrderListAdapter(private val items:ArrayList<OrderItem>,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.nameTextView.text = items[position].name
         holder.lotTextView.text = items[position].lot
-        holder.valueTextView.text = 0.toString()
+        holder.valueTextView.text = items[position].value.toString()
 
         holder.plusButton.setOnClickListener {
             items[position].value++

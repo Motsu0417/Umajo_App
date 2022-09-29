@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.motsu.hiromoto.umajo_app.databinding.FragmentOrderBinding
 
@@ -30,6 +31,7 @@ class OrderFragment : Fragment() {
             adapter = OrderListAdapter(items, requireActivity() as AppCompatActivity)
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
+            addItemDecoration(DividerItemDecoration(this.context, DividerItemDecoration.VERTICAL))
         }
 
         binding.orderShareButton.setOnClickListener {
