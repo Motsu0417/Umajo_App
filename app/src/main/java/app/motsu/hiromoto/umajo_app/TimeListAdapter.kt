@@ -8,22 +8,22 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.internal.ContextUtils.getActivity
-import java.time.LocalDate
-import java.time.LocalDateTime
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
-import kotlin.coroutines.coroutineContext
 
+@SuppressLint("ResourceAsColor", "ResourceType")
+@RequiresApi(Build.VERSION_CODES.O)
 class TimeListAdapter(private val timeItems:ArrayList<TimeItem>,
                       private val rootActivity: AppCompatActivity): RecyclerView.Adapter<TimeListAdapter.ViewHolder>() {
 
@@ -45,9 +45,6 @@ class TimeListAdapter(private val timeItems:ArrayList<TimeItem>,
         return ViewHolder(item)
     }
 
-
-    @SuppressLint("ResourceAsColor")
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = timeItems[position]
         views.add(holder)
@@ -94,12 +91,30 @@ class TimeListAdapter(private val timeItems:ArrayList<TimeItem>,
             },0,30,true ).show()
         }
 
+        // アイテム長押し時に削除できるようにする
         holder.itemView.setOnLongClickListener {
-            timeItems.removeAt(position)
-
-            notifyDataSetChanged()
+            val dialogBuilder = MaterialAlertDialogBuilder(rootActivity)
+                .setMessage("削除しますか？")
+                .setNegativeButton("削除しない") { dialog, which ->
+                    // Respond to negative button press
+                }
+                .setPositiveButton("削除する") { dialog, which ->
+                    // 削除っぽいアニメーションを追加してみる
+                    val anime: Animation = AnimationUtils.loadAnimation(rootActivity, R.animator.time_item_drop)
+                    anime.setAnimationListener(object : Animation.AnimationListener {
+                        override fun onAnimationStart(animation: Animation) {}
+                        override fun onAnimationEnd(animation: Animation) {
+                            timeItems.remove(holder.myItem)
+                            notifyDataSetChanged()
+                        }
+                        override fun onAnimationRepeat(animation: Animation) {}
+                    })
+                    it.startAnimation(anime)
+                }.show()
             return@setOnLongClickListener true
         }
+
+
     }
 
     override fun getItemCount() = timeItems.size

@@ -1,18 +1,21 @@
 package app.motsu.hiromoto.umajo_app
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.motsu.hiromoto.umajo_app.databinding.FragmentOrderBinding
 
 
+@RequiresApi(Build.VERSION_CODES.O)
 class OrderFragment : Fragment() {
 
     private var _binding: FragmentOrderBinding? = null

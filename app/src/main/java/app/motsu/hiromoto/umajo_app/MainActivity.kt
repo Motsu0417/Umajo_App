@@ -11,7 +11,6 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.view.isVisible
@@ -136,8 +135,8 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, TimeNotificationService::class.java)
                 intent.putExtra("NotiTime", it.endTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss")))
                 startService(intent)
+                it.notificationFlag = false
             }
-
         }
 
         super.onDestroy()

@@ -39,8 +39,6 @@ class TimeManageFragment : Fragment() {
 
         binding.floatingActionButton.setOnClickListener{
             TimePickerDialog(requireActivity(), { timePicker, hour, minute ->
-                Toast.makeText(requireActivity(), "$hour:$minute", Toast.LENGTH_SHORT).show()
-
                 timeItems.add(TimeItem(
                     LocalDateTime.of(LocalDate.now().year,
                         LocalDate.now().month,
@@ -65,7 +63,6 @@ class TimeManageFragment : Fragment() {
             }
         }.start()
 
-        
         return binding.root
     }
 

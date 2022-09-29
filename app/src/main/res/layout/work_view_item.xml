@@ -8,6 +8,7 @@
         android:id="@+id/work_item_checkBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
         android:fontFamily="@font/kosugi_maru"
         android:text="CheckBox"
         android:textAlignment="viewStart"
