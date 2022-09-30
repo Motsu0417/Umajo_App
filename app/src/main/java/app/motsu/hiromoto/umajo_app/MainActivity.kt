@@ -21,6 +21,7 @@ import okhttp3.Request
 import java.time.LocalDateTime
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
+import kotlin.concurrent.fixedRateTimer
 
 const val CHANNEL_ID = "UMAJO_APP"
 const val COUNT_ID_KEY = "COUNT_ID"

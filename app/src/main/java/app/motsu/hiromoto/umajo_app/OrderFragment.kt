@@ -10,9 +10,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.motsu.hiromoto.umajo_app.databinding.FragmentOrderBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -36,6 +39,15 @@ class OrderFragment : Fragment() {
             setHasFixedSize(true)
             addItemDecoration(DividerItemDecoration(this.context, DividerItemDecoration.VERTICAL))
         }
+
+        MainActivity.scope.launch{
+            // 時間のかかる処理
+            while(items.size == 0){
+                delay(500)
+                binding.orderRecycleView.adapter?.notifyDataSetChanged()
+            }
+            binding.animLoad.isVisible = false
+        }.start()
 
         binding.orderShareButton.setOnClickListener {
             var sendText = ""

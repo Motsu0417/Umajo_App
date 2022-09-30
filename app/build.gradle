@@ -48,5 +48,6 @@ dependencies {
     // okhttpを利用することにする
     // https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
     implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.10.0-RC1'
+    implementation 'com.airbnb.android:lottie:5.2.0'
 
 }
